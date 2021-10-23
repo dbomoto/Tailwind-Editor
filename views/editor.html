@@ -1,16 +1,32 @@
+<!-- 
+SOURCE: https://reactgo.com/build-your-own-html-editor/
+ -->
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Tailwind Editor</title>
-	<meta name="description" content="HTML live editor with Tailwind CSS">
-	<meta name="keywords" content="html editor tailwind live">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/editor.css">
+    <title>Html editor</title>
 </head>
-
 <body>
-	I AM THE EDITOR. BOW TO ME.
-</body>
+    <div class="main-editor">
+        <div class="commandBar">
+        <button class="runCMD">Run</button>
+        </div>
 
+        <div class="editorWrapper">
+          <div class="editor" contenteditable>
+              Writecode here.
+          </div>
+
+          <iframe class="liveView">
+          </iframe>
+        <div>
+    </div>
+
+    <script type="application/javascript" src="/public/editor.js"></script>
+</body>
 </html>
