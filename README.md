@@ -1,5 +1,5 @@
 # Tailwind-Editor
-# HTML live editor with Tailwind CSS
+## HTML live editor with Tailwind CSS
 
 ## GOALS
 - the entire app is loaded on the client side.
