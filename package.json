@@ -1,0 +1,23 @@
+{
+  "name": "Tailwind-Editor",
+  "version": "1.0.0",
+  "description": "Live html editor with tailwind css.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbomoto/Tailwind-Editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbomoto/Tailwind-Editor/issues"
+  },
+  "homepage": "https://github.com/dbomoto/Tailwind-Editor#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
