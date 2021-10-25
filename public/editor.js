@@ -1,16 +1,16 @@
 const first = document.querySelector(".editor");
-const iframe = document.querySelector("iframe");
+const liveView = document.querySelector(".liveView");
 const btn = document.querySelector(".runCMD");
 
 btn.addEventListener("click", () => {
   var html = first.textContent;
-  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
+  liveView.innerHTML = html 
 });
 
 
 first.addEventListener('keyup', () => {
   var html = first.textContent;
-  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
+  liveView.innerHTML = html 
 })
 
 first.addEventListener("paste", function(e) {

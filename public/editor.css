@@ -55,23 +55,31 @@
 
 .editor {
   background-color: #ffffff;
-  width: 50%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  white-space: pre;
+  min-width: 300px;
+  overflow-x: auto;
+  overflow-y: scroll;
+  white-space: normal;
   box-shadow: 0 1px 1px rgb(22, 22, 22);
   outline: none;
   padding: 0.4rem;
   height: 90vh;
+  resize: horizontal;
+  word-wrap: normal;
+  border-width: 3px;
+  border-color: black;
 }
 
 .liveView {
   background-color: rgb(255, 255, 255);
-  width: 50%;
-  overflow-y: auto;
+  /* width: 100%; */
+  min-width: 480px;
+  overflow-y: scroll;
   white-space: pre;
   right: 0;
   box-shadow: 0 1px 1px rgb(22, 22, 22);
   padding: 0.4rem;
   height: 90vh;
+  flex-grow: 1;
+  border-width: 3px;
+  border-color: black;  
 }
