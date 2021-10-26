@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "tailwind": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/tailwindCSS.css --watch"
+    "tailwind": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/tailwindCSS.css"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dbomoto/Tailwind-Editor#readme",
   "dependencies": {
+    "ace-builds": "^1.4.13",
     "autoprefixer": "^10.3.7",
     "express": "^4.17.1"
   },

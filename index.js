@@ -6,6 +6,8 @@ const port = 3000
 
 app.use("/public", express.static(process.cwd() + '/public'));
 
+app.use("/editor", express.static(process.cwd()+ '/node_modules/ace-builds/src-noconflict/'));
+
 routes(app,path);
 
 app.listen(port, () => {
