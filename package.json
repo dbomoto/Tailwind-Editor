@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "tailwind": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/tailwindCSS.css"
+    "tailwind": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/tailwindCSS.css",
+    "webpage": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/webpage.css"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "dependencies": {
     "ace-builds": "^1.4.13",
     "autoprefixer": "^10.3.7",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "tailwindcss": "^2.2.17"
   },
   "devDependencies": {}
 }

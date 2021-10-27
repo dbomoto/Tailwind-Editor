@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: [
+    './views/editor.html',
+    './pages/webpage.txt'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
