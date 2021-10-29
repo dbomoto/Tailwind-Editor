@@ -9,12 +9,7 @@ editor.setTheme("ace/theme/twilight");
 editor.session.setMode("ace/mode/html");
 editor.setFontSize(17);
 
-
-// btn.addEventListener("click", () => {
-//   var html = first.textContent;
-//   liveView.innerHTML = html 
-// });
-
+// event listeners on the editor
 btn.addEventListener('click',async ()=>{
   let data = editor.getValue();
   let response = await fetch('/tailwind',{
@@ -27,15 +22,15 @@ btn.addEventListener('click',async ()=>{
     })
   let status = await response.json()
   if (status.tailwind === 'updated'){
-    reloadCSS(); 
+    document.getElementById('customCSS').innerHTML = decodeURI(status.css);
   } else {
     alert('Sum ting whent wong ohn da sirvir. UwU')
   }
 })
 
 first.addEventListener('keyup', () => {
-  var html = editor.getValue();
-  liveView.innerHTML = html 
+  var htmlValue = editor.getValue();
+  liveView.innerHTML = htmlValue 
 })
 
 first.addEventListener("paste", function(e) {
@@ -44,18 +39,6 @@ first.addEventListener("paste", function(e) {
   document.execCommand("insertText", false, text);
 });
 
-function reloadCSS(){
 
-  // remove old webpage.css
-  var links = document.getElementsByTagName('LINK')
-  links[2].remove()
 
-  // request new webpage.css
-  var head = document.getElementsByTagName('HEAD')[0]; 
-  var link = document.createElement('link');
-  link.rel = 'stylesheet'; 
-  link.type = 'text/css';
-  link.href = 'style.css'; 
-  head.appendChild(link);   
 
-}

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "tailwind": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/tailwindCSS.css",
-    "webpage": "npx tailwindcss -i ./public/tailwindDIR.css -o ./public/webpage.css"
+    "webpage": "npx tailwindcss -i ./public/tailwindDIRjit.css -o ./public/webpage.css"
   },
   "repository": {
     "type": "git",
