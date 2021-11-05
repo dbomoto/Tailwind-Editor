@@ -9,6 +9,7 @@ const port = 3000
 const sys = require('sys')
 const exec = require('child_process').exec
 
+// public resources
 app.use("/public", express.static(process.cwd() + '/public'));
 
 // editor req for resources
@@ -20,8 +21,10 @@ app.use(express.json());
 // parses URL encoded bodies
 app.use(express.urlencoded())
 
+// modularized routes
 routes(app,path,fs,exec);
 
+// app listening
 app.listen(port, () => {
   console.log(`Example app listening at ${port
   }`)

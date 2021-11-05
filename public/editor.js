@@ -1,44 +1,52 @@
 // editor behavior
-const first = document.querySelector(".editor");
+const editor = document.querySelector(".editor");
 const liveView = document.querySelector(".liveView");
-const btn = document.querySelector(".runCMD");
+const btn = document.querySelector("#runCMD");
+const loader = document.querySelector('#loader');
+const mainEditor = document.querySelector('.main-editor')
 
 // editor settings and configurations
-const editor = ace.edit("editor");
-editor.setTheme("ace/theme/twilight");
-editor.session.setMode("ace/mode/html");
-editor.setFontSize(17);
+const aceEditor = ace.edit("editor");
+aceEditor.setTheme("ace/theme/twilight");
+aceEditor.session.setMode("ace/mode/html");
+aceEditor.setFontSize(17);
 
-// event listeners on the editor
-btn.addEventListener('click',async ()=>{
-  let data = editor.getValue();
+// RUN button
+btn.addEventListener('click', jitTailwind)
+
+// onkeyup event on the editor
+editor.addEventListener('keyup', () => {  
+  liveView.innerHTML = aceEditor.getValue() 
+  // auto compile in 10s
+  setTimeout(jitTailwind,5000);
+})
+
+// paste event on the editor
+editor.addEventListener("paste", function(e) {
+  e.preventDefault();
+  var text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  jitTailwind();
+});
+
+// request for compiled custom css
+async function jitTailwind(){
+  loader.classList.toggle('hidden')
   let response = await fetch('/tailwind',{
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },    
-    body: JSON.stringify({'webpage':editor.getValue()})
+    body: JSON.stringify({'webpage':aceEditor.getValue()})
     })
   let status = await response.json()
   if (status.tailwind === 'updated'){
     document.getElementById('customCSS').innerHTML = decodeURI(status.css);
   } else {
-    alert('Sum ting whent wong ohn da sirvir. UwU')
+    alert('Sum ting whent wong ohn da sirvir. Pwease welowd de eyjitur. UwU')
   }
-})
-
-first.addEventListener('keyup', () => {
-  var htmlValue = editor.getValue();
-  liveView.innerHTML = htmlValue 
-})
-
-first.addEventListener("paste", function(e) {
-  e.preventDefault();
-  var text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-});
-
-
+  loader.classList.toggle('hidden')
+}
 
 

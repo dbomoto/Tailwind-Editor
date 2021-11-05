@@ -6,26 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/public/tailwindCSS.css">
     <link rel="stylesheet" href="/public/editor.css">
-    <!-- <link rel="stylesheet" href="/public/webpage.css"> -->
     <title>Html editor</title>
     <style id="customCSS">
     </style>
 </head>
 <body>
 
-    <div class="main-editor">
+    <!-- loading screen -->
+    <div id="loader" class="absolute w-full h-full bg-red-200 opacity-80 z-10 flex justify-center items-center hidden">
+      <div>
+        <div class="loader"></div>
+        <br>
+        <p class="text-center">Compiling...</p>
+      </div>
+    </div>
+    
 
+    <!-- main editor -->
+    <div class="main-editor">
         <div class="commandBar">
-        <button class="runCMD">Run</button>
+          <button id="runCMD" class="runCMD">
+            Run
+          </button>          
         </div>
 
         <div class="editorWrapper">
-
           <pre id="editor" class="editor" ></pre>
-
-          <div class="liveView">
-          </div>
-
+          <div class="liveView"></div>
         </div>
     </div>
 
