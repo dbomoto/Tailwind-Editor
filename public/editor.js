@@ -3,7 +3,12 @@ const editor = document.querySelector(".editor");
 const liveView = document.querySelector(".liveView");
 const btn = document.querySelector("#runCMD");
 const loader = document.querySelector('#loader');
-const mainEditor = document.querySelector('.main-editor')
+const mainEditor = document.querySelector('.main-editor');
+const autoCompile = document.querySelector('#autoCompile');
+
+// global variables
+var loaderTimer;
+var autoCompileBtn = true;
 
 // editor settings and configurations
 const aceEditor = ace.edit("editor");
@@ -15,11 +20,12 @@ aceEditor.setFontSize(17);
 btn.addEventListener('click', jitTailwind)
 
 // onkeyup event on the editor
-editor.addEventListener('keyup', () => {  
+editor.addEventListener('keyup', ()=>{
   liveView.innerHTML = aceEditor.getValue() 
-  // auto compile in 10s
-  setTimeout(jitTailwind,5000);
 })
+
+// auto complie on keyup and after a set period
+editor.addEventListener('keyup', keyupListener)
 
 // paste event on the editor
 editor.addEventListener("paste", function(e) {
@@ -29,9 +35,23 @@ editor.addEventListener("paste", function(e) {
   jitTailwind();
 });
 
-// request for compiled custom css
+// user preference of auto compile or manual
+autoCompile.addEventListener('click', () => {
+  if (autoCompileBtn){
+  editor.removeEventListener('keyup', keyupListener);
+  autoCompile.innerText = 'Compile OFF'
+  autoCompileBtn = false;
+  } else {
+  editor.addEventListener('keyup', keyupListener);
+  autoCompile.innerText = 'Compile AUTO'
+  autoCompileBtn = true;   
+  }
+})
+
+// request function for compiled custom css
 async function jitTailwind(){
-  loader.classList.toggle('hidden')
+  editor.removeEventListener('keyup', keyupListener)
+  loader.classList.toggle('hidden');
   let response = await fetch('/tailwind',{
     method: 'POST',
     headers: {
@@ -46,7 +66,13 @@ async function jitTailwind(){
   } else {
     alert('Sum ting whent wong ohn da sirvir. Pwease welowd de eyjitur. UwU')
   }
+  liveView.innerHTML = aceEditor.getValue();
+  editor.addEventListener('keyup', keyupListener)
   loader.classList.toggle('hidden')
 }
 
-
+// Timer function for keyup event listener
+function keyupListener(){  
+  clearTimeout(loaderTimer);
+  loaderTimer = setTimeout(jitTailwind, 5000);
+}
