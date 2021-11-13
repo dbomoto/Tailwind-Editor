@@ -39,12 +39,12 @@
 
 .runCMD:hover{
   color:white;
-  background: hsl(240, 100%, 50%);
+  background: hsl(240, 100%, 20%);
 }
 
 .runCMD:active{
   color:white;
-  background: hsl(240, 100%, 20%);
+  background: hsl(240, 100%, 10%);
 }
 .main-editor {
   background: rgba(0, 0, 0, 0.91);
@@ -77,7 +77,7 @@
 
 .editor {
   /* background-color: #ffffff; */
-  width: 300px;
+  width: 50%;
   /* overflow-x: auto; */
   /* overflow-y: scroll; */
   /* white-space: normal; */
@@ -104,4 +104,8 @@
   flex-grow: 1;
   border-width: 3px;
   border-color: black;  
+}
+
+.buttonStatus {
+  color: red;
 }
