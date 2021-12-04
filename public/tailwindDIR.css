@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  .cmdBar-btn{
+    @apply h-16 text-yellow-300 w-1/4 bg-black font-semibold rounded-lg
+  }
+  .cmdBar-btn:hover {
+    @apply bg-blue-900 text-white border-red-500 border-4 box-border
+  } 
+}

@@ -109,3 +109,7 @@
 .buttonStatus {
   color: red;
 }
+
+.cmdBar-btn{
+  @apply h-16 text-yellow-300 w-1/4 bg-black font-semibold rounded-lg hover/:bg-blue-900 hover/:text-white hover/:border-red-500 hover/:border-4 box-border;
+}

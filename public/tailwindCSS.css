@@ -634,6 +634,28 @@ video {
   }
 }
 
+.cmdBar-btn{
+  height: 4rem;
+  width: 25%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(252, 211, 77, var(--tw-text-opacity))
+}
+
+.cmdBar-btn:hover {
+  box-sizing: border-box;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
