@@ -1,1 +1,5 @@
-<div class="bg-red-500 text-[100px]">testing</div>
+          <p id="answerWrong" class="
+          text-2xl hidden
+          ">
+            Display correct answer here of the answer is wrong  
+          </p>

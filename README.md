@@ -14,6 +14,11 @@
 - Unsplash API.
 - Buy me a coffee.
 - Advertise that i am looking for a job.
+- Update liveview script for tailwindcss 3.0 and delete unecessary files
+- Update score of each tailwind utility to affect completion algo
+- Adjust editor completions to read only the beginning of the value not the whole value itself.
+- Update tailwind config for 3.0
+- Update css generation of tailwind 3.0
 
 ### FEATURES TO ADD
 - user can add custom classes using the @apply directive
@@ -24,3 +29,4 @@
 - On npm scripts, I used npx, but since Tailwind is installed, it will not retrieve files anymore from npm and I can still compile the css via Tailwind CLI.
 
 - [10/30/2021] JIT functioning correctly but slow on the receiving of new classes in client side.
+

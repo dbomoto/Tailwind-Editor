@@ -30,8 +30,8 @@ aceEditor.session.setMode("ace/mode/html");
 aceEditor.setFontSize(17);
 
 // test
-aceEditor.getSession().setUseWrapMode(true);
-aceEditor.resize(true);
+// aceEditor.getSession().setUseWrapMode(true);
+// aceEditor.resize(true);
 
 aceEditor.setOptions({
   enableBasicAutocompletion: [{
@@ -52,6 +52,7 @@ liveView.setAttribute('srcdoc', `
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Talwind Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <style>
   ${tailwindCSS}
@@ -82,8 +83,10 @@ window.onload = ()=>{
   // editor.addEventListener("paste", function(e) {
   //   e.preventDefault();
   //   var text = e.clipboardData.getData("text/plain");
-  //   document.execCommand("insertText", false, text);
-  //   jitTailwind();
+  //   // document.execCommand("insertText", false, text);
+  //   // editor.execCommand('paste',text)
+  //   // liveView.contentDocument.body.innerHTML = text
+  //   editor.insert(text)
   // });
 }
 
