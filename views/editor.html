@@ -6,57 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
-    <link rel="stylesheet" href="/public/tailwindCSS.css">
     <link rel="stylesheet" href="/public/editor.css">
     <title>Html editor</title>
-    <style id="customCSS">
-    </style>
 </head>
 <body>
 
-    <!-- loading screen -->
-    <div id="loader" class="absolute w-full h-full bg-red-200 opacity-80 z-10 flex justify-center items-center hidden">
+    <!-- KEEP OR TRASH -->
+    <!-- loading screen-->
+    <!-- <div id="loader" class="absolute w-full h-full bg-red-200 opacity-80 z-10 flex justify-center items-center hidden">
       <div>
         <div class="loader"></div>
         <br>
         <p class="text-center">Compiling...</p>
       </div>
-    </div>
-    
+    </div> -->
 
-    <!-- main editor -->
+    <!-- main editor interface-->
     <div id="main-editor" class="main-editor">
-      <div class="flex flex-row justify-evenly bg-gray-700 w-full">
+        <!-- editor section -->
+      <div class="flex flex-row bg-gray-700 w-full pl-1">
         <div class="w-1/2 flex flex-row space-x-1">
           <button id="runCMD" class="cmdBar-btn">
-            Run
-          </button>          
-          <button id="autoCompile" class="cmdBar-btn">
-            Compile
-            <br>
-            <span class="buttonStatus">AUTO</span>
-          </button>          
-          <button id="vimKeys" class="cmdBar-btn">
-            VIM Keys
-            <br>
-            <span class="buttonStatus">OFF</span>
-          </button>          
+            Generate
+          </button>                          
           <button id="newTab" class="cmdBar-btn">
             View in 
             <br>
             <span class="buttonStatus">New Tab</span>
           </button>          
         </div>
-        <div class="w-1/2 flex flex-row-reverse">
-            <button class="cmdBar-btn h-full">Rename</button>
-            <input type="text" 
-            class="h-4/6 align my-auto mr-1 w-2/4 min-w-[200px] pt-1 pr-1 text-right
-            bg-gray-700 text-white focus:bg-white focus:text-black focus:text-3xl
-            text-2xl" 
-            value="default.html">
-        </div>
       </div> 
 
+      <!-- live view of webpage -->
       <div class="editorWrapper">
         <pre id="editor" class="editor" ></pre>
         <iframe id="liveView" class="liveView"></iframe>
@@ -65,7 +46,7 @@
 
     <script src="/editor/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="/editor/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/public/editor.js" type="application/javascript" ></script>
     <script src="/public/completions.js" type="application/javascript"></script>
+    <script src="/public/editor.js" type="application/javascript" ></script>
 </body>
 </html>
