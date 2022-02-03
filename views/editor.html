@@ -10,21 +10,11 @@
     <title>Html editor</title>
 </head>
 <body>
-
-    <!-- KEEP OR TRASH -->
-    <!-- loading screen-->
-    <!-- <div id="loader" class="absolute w-full h-full bg-red-200 opacity-80 z-10 flex justify-center items-center hidden">
-      <div>
-        <div class="loader"></div>
-        <br>
-        <p class="text-center">Compiling...</p>
-      </div>
-    </div> -->
-
+  
     <!-- main editor interface-->
     <div id="main-editor" class="main-editor">
         <!-- editor section -->
-      <div class="flex flex-row bg-gray-700 w-full pl-1">
+      <div id="editorInput" class="flex flex-row bg-gray-700 w-full pl-1">
         <div class="w-1/2 flex flex-row space-x-1">
           <button id="runCMD" class="cmdBar-btn">
             Generate
@@ -40,7 +30,7 @@
       <!-- live view of webpage -->
       <div class="editorWrapper">
         <pre id="editor" class="editor" ></pre>
-        <iframe id="liveView" class="liveView"></iframe>
+        <iframe id="liveView" class="liveView" ></iframe>
       </div>
     </div>
 
