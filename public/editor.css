@@ -444,20 +444,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.absolute {
-  position: absolute;
-}
-.z-10 {
-  z-index: 10;
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: flex;
 }
+.inline-flex {
+  display: inline-flex;
+}
 .hidden {
   display: none;
 }
+.h-\[4rem\] {
+  height: 4rem;
+}
 .h-full {
   height: 100%;
+}
+.h-\[2rem\] {
+  height: 2rem;
+}
+.h-\[300px\] {
+  height: 300px;
 }
 .w-full {
   width: 100%;
@@ -465,135 +474,81 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/2 {
   width: 50%;
 }
+.w-\[25\%\] {
+  width: 25%;
+}
+.w-\[4rem\] {
+  width: 4rem;
+}
 .flex-row {
   flex-direction: row;
 }
-.items-center {
-  align-items: center;
+.flex-col {
+  flex-direction: column;
 }
 .justify-center {
   justify-content: center;
-}
-.justify-evenly {
-  justify-content: space-evenly;
 }
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+.bg-rose-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 205 211 / var(--tw-bg-opacity));
+}
+.bg-\[\#000000\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.pl-1 {
+  padding-left: 0.25rem;
+}
 .text-center {
   text-align: center;
 }
-.opacity-80 {
-  opacity: 0.8;
+.font-semibold {
+  font-weight: 600;
 }
-
-* {
+.text-\[\#FDE047\] {
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+.hover\:box-border:hover {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+.hover\:border-4:hover {
+  border-width: 4px;
 }
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+.hover\:border-\[\#EF4444\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.hover\:bg-\[\#1E3A8A\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
 }
-
-.runCMD {
-  poistion:fixed;
-  right:0;
-  padding: 0.4rem;
-  width: 6rem;
-  background: rgb(0, 0, 0);
-  color: gold;
-  font-size: 1rem;
-  outline:none;
-  cursor:pointer;
-  height: 100%;
-}
-
-.runCMD:hover{
-  color:white;
-  background: hsl(240, 100%, 20%);
-}
-
-.runCMD:active{
-  color:white;
-  background: hsl(240, 100%, 10%);
-}
-.main-editor {
-  background: rgba(0, 0, 0, 0.91);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 1rem;
-  box-shadow:0 2px 3px black;
-  position:fixed;
-  height:100vh;
-  justify-content: center;
-  align-items: center;
-  border: 7px solid #36383f;
-}
-
-.commandBar {
-  display: flex;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: gray;
-}
-
-.editorWrapper {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.editor {
-  width: 50%;
-  height: 90vh;
-  resize: horizontal;
-}
-
-.liveView {
-  background-color: rgb(255, 255, 255);
-  min-width: 480px;
-  overflow-y: scroll;
-  white-space: pre;
-  right: 0;
-  box-shadow: 0 1px 1px rgb(22, 22, 22);
-  padding: 0.4rem;
-  height: 90vh;
-  flex-grow: 1;
-  border-width: 3px;
-  border-color: black;  
-}
-
-.buttonStatus {
-  color: red;
+.hover\:text-\[\#FFFFFF\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }

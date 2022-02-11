@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <!-- Asking for translate option makes the editor buggy. -->
-<html lang="en" class="notranslate" translate="no"> 
+<html lang="en" class="notranslate" translate="no">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="google" content="notranslate">
-    <link rel="stylesheet" href="/public/editor.css">
-    <title>Html editor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="google" content="notranslate">
+	<link rel="stylesheet" href="/public/editor.css">
+  <link rel="stylesheet" href="/public/preTW.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+	<title>Html editor</title>
 </head>
+
 <body>
-  
-    <!-- main editor interface-->
-    <div id="main-editor" class="main-editor">
-        <!-- editor section -->
-      <div id="editorInput" class="flex flex-row bg-gray-700 w-full pl-1">
-        <div class="w-1/2 flex flex-row space-x-1">
-          <button id="runCMD" class="cmdBar-btn">
-            Generate
-          </button>                          
-          <button id="newTab" class="cmdBar-btn">
-            View in 
-            <br>
-            <span class="buttonStatus">New Tab</span>
-          </button>          
-        </div>
-      </div> 
+
+	<!-- main editor interface-->
+	<div id="main-editor" class="main-editor">
+		<!-- editor section -->
+		<div id="editorInput" class="flex flex-row bg-gray-700 w-full pl-1">
+			<div class="w-1/2 flex flex-row space-x-1">
+				<button id="runCMD" class="cmdBar-btn">
+          Generate
+        </button>                          
+        <button id="newTab" class="cmdBar-btn">
+          View in 
+          <br>
+          <span class="buttonStatus">New Tab</span>
+        </button>    
+        <a href="#ex1" rel="modal:open" class="bg-rose-200 w-[25%] inline-flex flex-col justify-center text-center rounded-lg text-[#FDE047] bg-[#000000] font-semibold h-[4rem] hover:border-[#EF4444] hover:border-4 hover:box-border hover:bg-[#1E3A8A] hover:text-[#FFFFFF]">
+          How to
+        </a>               
+      </div>
+    </div> 
 
       <!-- live view of webpage -->
       <div class="editorWrapper">
@@ -34,9 +42,51 @@
       </div>
     </div>
 
-    <script src="/editor/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/editor/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/public/completions.js" type="application/javascript"></script>
-    <script src="/public/editor.js" type="application/javascript" ></script>
+  <!-- Modal for How to-->
+  <div id="ex1" class="modal">
+    <div class="w-full h-full flex flex-col space-y-2">
+      <p class="font-semibold">Ctrl+&#60</p>
+      <p>Opens the settings for the editor.</p>
+      <hr class="border-2 border-red-500">
+      <p class="font-semibold">F1</p>
+      <p>Opens the command bar for the editor.</p>
+      <hr class="border-2 border-red-500">
+      <p class="font-semibold">NOTES</p>
+      <p>Editor must have focus in order for these commands to work.</p>
+      <hr class="border-2 border-red-500">
+      <a href="#" rel="modal:close" class="bg-rose-200 w-[4rem] inline-flex flex-col justify-center text-center rounded-lg text-[#FDE047] bg-[#000000] font-semibold h-[2rem] hover:border-[#EF4444] hover:border-4 hover:box-border hover:bg-[#1E3A8A] hover:text-[#FFFFFF]">Close</a>
+    </div>
+  </div>
+
+
+
+  <!-- Modal for Generate -->
+  <div id="ex2" class="modal">
+    <div class="w-full h-[300px] flex flex-col space-y-2">
+      <pre id="genCSS" class="inline-block w-full h-full rounded-lg">
+      </pre>
+      <hr class="border-2 border-red-500">
+      <div class="flex flex-row justify-start space-x-1">
+        <a href="#" rel="modal:close" class="bg-rose-200 w-[4rem] inline-flex flex-col justify-center text-center rounded-lg text-[#FDE047] bg-[#000000] font-semibold h-[2rem] hover:border-[#EF4444] hover:border-4 hover:box-border hover:bg-[#1E3A8A] hover:text-[#FFFFFF]">Close</a>
+        <button class="bg-rose-200 w-[5rem] rounded-lg text-[#FDE047] bg-[#000000] font-semibold h-[2rem] hover:border-[#EF4444] hover:border-4 hover:box-border hover:bg-[#1E3A8A] hover:text-[#FFFFFF]" onclick="copyCSS()">Copy CSS</button>
+        <p class="text-xl hidden" id="copy-notifier">Copied to clipboard !</p>
+      </div>
+    </div>
+  </div>
+  <a href="#ex2" rel="modal:open" class="modal-generate hidden">
+  
+</a>   
+
+  <script type="text/javascript" src="/public/vkbeautify.0.99.00.beta.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <script src="/editor/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/editor/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/public/completions.js" type="application/javascript"></script>
+  <script src="/public/editor.js" type="application/javascript" ></script>
+
+  <!-- For development purposes only -->
+  <script src="https://cdn.tailwindcss.com"></script>  
 </body>
 </html>
