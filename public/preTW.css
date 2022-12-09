@@ -79,7 +79,7 @@
 
 .liveView {
   background-color: rgb(255, 255, 255);
-  min-width: 480px;
+  width: 50%;
   overflow-y: scroll;
   white-space: pre;
   right: 0;

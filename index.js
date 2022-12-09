@@ -8,13 +8,13 @@ const port = 3000
 app.use("/public", express.static(process.cwd() + '/public'));
 
 // editor req for resources
-app.use("/editor", express.static(process.cwd()+ '/node_modules/ace-builds/src-noconflict/'));
+app.use("/editor", express.static(process.cwd() + '/node_modules/ace-builds/src-noconflict/'));
 
 // modularized routes
-routes(app,path);
+routes(app, path);
 
 // app listening
 app.listen(port, () => {
   console.log(`Example app listening at ${port
-  }`)
+    }`)
 })
