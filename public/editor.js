@@ -345,11 +345,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <p>If you need to use the developer tools for your browser or your developer extensions, it's best
                 to open the webpage on a new tab instead of using the Live View. Just click
                 the <span class="text-yellow-700 font-semibold italic underline
-                underline-offset-4">VIEW IN NEW TAB</span> button and your page will be pased on to
+                underline-offset-4">VIEW IN NEW TAB</span> button and your page will be passed on to
                 that new tab.
             </p>
             <h2 class="text-xl font-mono font-medium">CSS Code Generation</h2>
-            <p>CSS code equivalent for Tailwind is avaiable on demand in case you dont want to add 
+            <p>CSS code equivalent for Tailwind is available on demand in case you dont want to add 
                 Tailwind to your website and make it a bit faster by having fewer requests sent to
                 the server.
             </p>
@@ -360,7 +360,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             </p>
             <h2 class="text-xl font-mono font-medium">Responsive</h2>
             <p>Tailwind Editor is responsive. That means whether you are using this on the 
-                phone or your desktop PC, it can easily asjust itseltf to fit your screen.
+                phone or your desktop PC, it can easily adjust itself to fit your screen.
             </p>
         </div>
 
@@ -369,7 +369,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <p>Sometimes, the Live View won't work immediately escpecially
                 if a lot of code is written at one time. Because of this, 
                 a <span class="text-yellow-700 font-semibold italic underline
-                underline-offset-4">RELOAD</span> is available for your use to manually
+                underline-offset-4">RELOAD</span>button is available for your use to manually
                 reload the the page and see the changes.
             </p>
         </div>
