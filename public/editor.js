@@ -301,7 +301,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <p class="font-sans">Tailwind Editor lets you code 
                 HTML with TailwindCSS autocomplete and immediately see the results
                 on the Live View section. This welcome page, is an example of using this editor.
-                The code for this is avaialbe on the editor for your reference. A prequisite to using
+                The code for this is avaialbe on the editor for your reference. A prerequisite to using
                 this app is the familiarity in using TailwindCSS. If you wish to learn how TailwindCSS 
                 works, please visit them on their <a href="https://tailwindcss.com/" target="_blank"
                 class="underline text-blue-500 underline-offset-4 cursor-pointer">website</a>
