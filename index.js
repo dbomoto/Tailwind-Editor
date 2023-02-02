@@ -15,6 +15,6 @@ routes(app, path);
 
 // app listening
 app.listen(port, () => {
-  console.log(`Example app listening at ${port
+  console.log(`App is listening at ${port
     }`)
 })
